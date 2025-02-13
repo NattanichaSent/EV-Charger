@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const MenuButton = ({ Icon, text, href }) => {
+const MenuButton = ({ Icon, text, href, className }) => {
     const [isActive, setIsActive] = useState(false);
 
     const handleClick = () => {
-        setIsActive(!isActive); // สลับค่า true/false เพื่อเปลี่ยนสี
+        setIsActive(!isActive);
     };
 
     return (
         <a
             href={href || "#"}
             onClick={handleClick}
-            className={`flex items-center pl-14 py-3 rounded-tr-lg rounded-br-lg cursor-pointer
-        ${isActive ? "bg-[#0047AB] text-white" : "hover:bg-[rgba(0,71,171,0.6)] hover:text-white"}
-      `}
+            className={`flex items-center pl-14 py-3 rounded-tr-lg rounded-br-lg cursor-pointer 
+        ${isActive ? "bg-secondary text-onclickText" : "hover:bg-hover hover:text-onclickText"} 
+        ${className || ""}`}
         >
             {Icon && <Icon className="mr-4 h-6 w-6" />}
             {text}
