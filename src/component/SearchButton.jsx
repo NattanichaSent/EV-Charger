@@ -12,7 +12,7 @@ function SearchButton() {
                 className="px-4 py-2 outline-none w-60 text-icon text-sm flex items-center"
             />
             <button>
-                <MapIcon className='text-icon h-5 w-5 flex items-center' />
+                <MapIcon className='text-icon h-5 w-5 flex items-center cursor-pointer' />
             </button>
 
 

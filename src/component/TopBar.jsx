@@ -1,5 +1,6 @@
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import SearchButton from "./SearchButton";
+import ProfileNavbar from "./ProfileNavbar";
 
 const TopBar = () => {
     return (
@@ -15,7 +16,7 @@ const TopBar = () => {
 
             <div className="hidden lg:flex   flex-1 justify-between items-center ">
                 <SearchButton />
-                <button>Login</button>
+                <ProfileNavbar />
             </div>
         </div>
     );

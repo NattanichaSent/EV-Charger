@@ -10,7 +10,7 @@ import {
 
 function Status() {
     return (
-        <div className="flex  justify-between w-full h-fit space-x-[20px] lg:pr-14 lg:pl-[20px] lg:pt-[15px]">
+        <div className="flex  justify-between w-full h-fit space-x-[20px] ">
             <StatusBlock
                 title="Total"
                 count={20}
@@ -43,8 +43,8 @@ function Status() {
             />
             <StatusBlock
                 title="Reserved"
-                count={20}
-                percent={25}
+                count={4}
+                percent={20}
                 percentColor={"text-reservedIcon"}
                 description="of EV Chargers"
                 icon={UserIcon}
@@ -53,8 +53,8 @@ function Status() {
             />
             <StatusBlock
                 title="Unavailable"
-                count={20}
-                percent={25}
+                count={3}
+                percent={15}
                 percentColor={"text-xIcon"}
                 description="of EV Chargers"
                 icon={XMarkIcon}

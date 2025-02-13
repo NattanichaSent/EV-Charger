@@ -26,10 +26,10 @@ function StatusBlock({
     iconBgColor = "bg-gray-200",
 }) {
     return (
-        <div className=" flex flex-col p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)]  w-full">
+        <div className=" flex flex-col p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full">
             <div className="flex">
                 <div className="flex flex-col text-left justify-between  w-full text-primary">
-                    <p className="w-auto  text-sm">{title}</p>
+                    <p className="w-auto  text-sm font-semibold">{title}</p>
                     <p className="text-2xl font-bold">{count}</p>
                 </div>
 
@@ -39,7 +39,7 @@ function StatusBlock({
                     bgColor={iconBgColor}
                 />
             </div>
-            <p className=" text-left text-sm">
+            <p className=" text-left text-sm text-icon">
                 {percent !== null ? (
                     <span className={`font-semibold ${percentColor}`}>{percent}%</span>
                 ) : null}{" "}
