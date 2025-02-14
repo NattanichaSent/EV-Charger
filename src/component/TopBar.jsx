@@ -1,4 +1,5 @@
 import { Bars3Icon } from "@heroicons/react/24/outline";
+import { BellIcon } from "@heroicons/react/16/solid";
 import SearchButton from "./SearchButton";
 import ProfileNavbar from "./ProfileNavbar";
 
@@ -16,7 +17,12 @@ const TopBar = () => {
 
             <div className="hidden lg:flex   flex-1 justify-between items-center ">
                 <SearchButton />
-                <ProfileNavbar />
+                <div className="flex items-center">
+                    <button className="w-6 h-6 text-secondary flex items-center cursor-pointer" strokeWidth={1}>
+                        <BellIcon />
+                    </button>
+                    <ProfileNavbar />
+                </div>
             </div>
         </div>
     );

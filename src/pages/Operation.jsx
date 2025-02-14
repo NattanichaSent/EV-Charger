@@ -4,6 +4,7 @@ import TopBar from "../component/TopBar";
 import SideBar from "../component/SideBar";
 import PowerMeter from "../component/PowerMeter";
 import { ArrowTrendingUpIcon } from "@heroicons/react/24/outline";
+import LineGraph from "../component/LineGraph";
 
 function Operation() {
     return (
@@ -18,27 +19,31 @@ function Operation() {
                     </div>
                     <div className="lg:pr-14 lg:pl-[20px] lg:pt-[15px]">
                         <Status />
-                        <div className="flex mt-[20px]">
-                            <div className="flex flex-col space-y-[20px] ">
+                        <div className="flex flex-wrap md:flex-nowrap mt-5 justify-between gap-5 h-full">
+                            {/* PowerMeter Section */}
+                            <div className="flex flex-col space-y-5 w-full md:w-[30%] min-w-[280px]">
                                 <PowerMeter
                                     label="Current Power Usage"
                                     icon={ArrowTrendingUpIcon}
                                     iconColor="text-yellow-500"
-                                    power={1200}
+                                    power={750}
                                     unit="kW"
                                     description="Real-time updated"
                                 />
                                 <PowerMeter
                                     label="Total Power Consumption"
-                                    power={1200}
+                                    power={3500}
                                     unit="kWh"
                                     description="Last updated 3 mins ago"
                                 />
                             </div>
-                            <div>
-                                Graph
+
+                            {/* Graph Section */}
+                            <div className="w-full md:w-[70%]">
+                                <LineGraph />
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
