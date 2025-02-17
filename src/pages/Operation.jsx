@@ -5,8 +5,11 @@ import SideBar from "../component/SideBar";
 import PowerMeter from "../component/PowerMeter";
 import { ArrowTrendingUpIcon } from "@heroicons/react/24/outline";
 import LineGraph from "../component/LineGraph";
+import BarGraph from "../component/BarGraph";
+import PieGraph from "../component/PieGraph";
 
 function Operation() {
+
     return (
         <div>
             <TopBar />
@@ -21,7 +24,7 @@ function Operation() {
                         <Status />
                         <div className="flex flex-wrap md:flex-nowrap mt-5 justify-between gap-5 h-full">
                             {/* PowerMeter Section */}
-                            <div className="flex flex-col space-y-5 w-full md:w-[30%] min-w-[280px]">
+                            <div className="flex flex-col  justify-between  w-full md:w-[30%] min-w-[280px] ">
                                 <PowerMeter
                                     label="Current Power Usage"
                                     icon={ArrowTrendingUpIcon}
@@ -43,7 +46,10 @@ function Operation() {
                                 <LineGraph />
                             </div>
                         </div>
-
+                        <div className="flex mt-5 space-x-5 w-full h-fit">
+                            <BarGraph />
+                            <PieGraph />
+                        </div>
                     </div>
                 </div>
             </div>

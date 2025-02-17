@@ -1,5 +1,3 @@
-import { ArrowTrendingUpIcon } from '@heroicons/react/24/outline'
-
 function PowerMeter({
     power = 750,
     unit = "kW",
@@ -9,7 +7,7 @@ function PowerMeter({
     iconColor = "text-blue-500" // ตั้งสีเริ่มต้นเป็นสีน้ำเงิน
 }) {
     return (
-        <div className='flex flex-col p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] text-start w-full text-sm space-y-1'>
+        <div className='flex flex-col p-4 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] text-start w-full text-sm space-y-2'>
             <p className='font-semibold'>{label}</p>
             <div className='flex w-full justify-between'>
                 <div className='flex items-center'>

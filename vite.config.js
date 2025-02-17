@@ -5,4 +5,10 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    watch: {
+      usePolling: true, // เปิด polling mode (ลองใช้ถ้า HMR ไม่ทำงาน)
+    },
+    hmr: true, // เปิด Hot Module Replacement (HMR)
+  },
 });
