@@ -7,16 +7,20 @@ import { ArrowTrendingUpIcon } from "@heroicons/react/24/outline";
 import LineGraph from "../component/LineGraph";
 import BarGraph from "../component/BarGraph";
 import PieGraph from "../component/PieGraph";
+import StationStatus from "../component/StationStatus";
 
 function Operation() {
-
     return (
         <div>
-            <TopBar />
-            <div className="flex ">
-                <SideBar className="hidden lg:flex flex-shrink-0" />
-                <div className="w-full">
-                    <div className="flex  justify-between w-full h-fit lg:pr-14 lg:pl-[20px] lg:pt-[5px]">
+            {/* TopBar */}
+            <TopBar className="fixed top-0 left-0 w-full bg-white z-10" />
+
+            <div className="flex pt-16"> {/* เพิ่ม padding-top เพื่อให้เนื้อหาหลักไม่ถูกทับด้วย TopBar */}
+                {/* SideBar */}
+                <SideBar className="fixed top-16 left-0 h-screen z-10" /> {/* อยู่ใต้ TopBar */}
+
+                <div className="w-full pl-[270px]"> {/* ให้เนื้อหาหลักเลื่อนไปข้างๆ เพื่อหลีกเลี่ยงการทับซ้อนกับ SideBar */}
+                    <div className="flex justify-between w-full h-fit lg:pr-14 lg:pl-[20px] lg:pt-[5px]">
                         <p className="font-bold text-2xl text-start">Operation Dashboard</p>
                         <FilterButton />
                     </div>
@@ -24,7 +28,7 @@ function Operation() {
                         <Status />
                         <div className="flex flex-wrap md:flex-nowrap mt-5 justify-between gap-5 h-full">
                             {/* PowerMeter Section */}
-                            <div className="flex flex-col  justify-between  w-full md:w-[30%] min-w-[280px] ">
+                            <div className="flex flex-col justify-between w-full md:w-[30%] min-w-[280px]">
                                 <PowerMeter
                                     label="Current Power Usage"
                                     icon={ArrowTrendingUpIcon}
@@ -49,6 +53,9 @@ function Operation() {
                         <div className="flex mt-5 space-x-5 w-full h-fit">
                             <BarGraph />
                             <PieGraph />
+                        </div>
+                        <div className="mt-5 h-full w-full">
+                            <StationStatus />
                         </div>
                     </div>
                 </div>

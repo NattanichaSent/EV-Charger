@@ -11,10 +11,9 @@ import MenuButton from "../component/MenuButton";
 
 function SideBar({ className }) {
     return (
-        <div className={`w-72 text-primary h-full flex flex-col  transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out ${className}`}>
-
-            <nav className="flex flex-col font-semibold text-sm h-screen justify-between">
-                <div className="">
+        <div className={`w-auto text-primary h-screen flex flex-col ${className}`}>
+            <nav className="flex flex-col w-full font-semibold text-sm text-start flex-grow">
+                <div className="w-full">
                     <MenuButton Icon={BoltIcon} text="Menu Station" href="#menu" />
                     <MenuButton
                         Icon={ChartBarIcon}
@@ -33,7 +32,9 @@ function SideBar({ className }) {
                     />
                     <MenuButton Icon={RectangleStackIcon} text="History" href="#menu" />
                 </div>
-                <div className="mt-auto border-t border-stroke pt-5 ">
+
+                {/* ปุ่ม Setting และ Logout จะอยู่ด้านล่างสุด */}
+                <div className="border-t border-stroke mt-auto">
                     <MenuButton
                         Icon={Cog6ToothIcon}
                         text="Setting"
@@ -47,7 +48,7 @@ function SideBar({ className }) {
                 </div>
             </nav>
         </div>
-    )
+    );
 }
 
 export default SideBar;

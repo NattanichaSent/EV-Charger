@@ -11,7 +11,7 @@ const MenuButton = ({ Icon, text, href, className }) => {
         <a
             href={href || "#"}
             onClick={handleClick}
-            className={`flex items-center pl-14 py-3 rounded-tr-lg rounded-br-lg cursor-pointer 
+            className={`flex items-center pl-14 py-3 pr-3 rounded-tr-lg rounded-br-lg cursor-pointer 
         ${isActive ? "bg-secondary text-onclickText" : "hover:bg-hover hover:text-onclickText"} 
         ${className || ""}`}
         >
