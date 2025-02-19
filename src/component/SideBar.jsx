@@ -11,7 +11,7 @@ import MenuButton from "../component/MenuButton";
 
 function SideBar({ className }) {
     return (
-        <div className={`w-auto text-primary h-screen flex flex-col ${className}`}>
+        <div className={`w-auto bg-background text-primary h-screen flex flex-col ${className}`}>
             <nav className="flex flex-col w-full font-semibold text-sm text-start flex-grow">
                 <div className="w-full">
                     <MenuButton Icon={BoltIcon} text="Menu Station" href="#menu" />

@@ -15,20 +15,23 @@ function Operation() {
             {/* TopBar */}
             <TopBar className="fixed top-0 left-0 w-full bg-white z-10" />
 
-            <div className="flex pt-16"> {/* เพิ่ม padding-top เพื่อให้เนื้อหาหลักไม่ถูกทับด้วย TopBar */}
-                {/* SideBar */}
-                <SideBar className="fixed top-16 left-0 h-screen z-10" /> {/* อยู่ใต้ TopBar */}
+            <div className="flex pt-16">
+                {/* SideBar (ซ่อนใน sm และ md, แสดงใน lg ขึ้นไป) */}
+                <div className="hidden lg:block">
+                    <SideBar className="fixed top-16 left-0 h-screen z-10" />
+                </div>
 
-                <div className="w-full pl-[270px]"> {/* ให้เนื้อหาหลักเลื่อนไปข้างๆ เพื่อหลีกเลี่ยงการทับซ้อนกับ SideBar */}
-                    <div className="flex justify-between w-full h-fit lg:pr-14 lg:pl-[20px] lg:pt-[5px]">
+                {/* ปรับ padding-left เฉพาะเมื่อจอใหญ่ */}
+                <div className="w-full lg:pl-[300px] lg:pr-10 lg:mt-5 md:px-10 md:mt-2 bg-background">
+                    <div className="flex justify-between w-full h-fit">
                         <p className="font-bold text-2xl text-start">Operation Dashboard</p>
                         <FilterButton />
                     </div>
-                    <div className="lg:pr-14 lg:pl-[20px] lg:pt-[15px]">
+                    <div className="mt-5">
                         <Status />
-                        <div className="flex flex-wrap md:flex-nowrap mt-5 justify-between gap-5 h-full">
+                        <div className="flex flex-wrap lg:flex-nowrap mt-5 justify-between gap-5 h-full">
                             {/* PowerMeter Section */}
-                            <div className="flex flex-col justify-between w-full md:w-[30%] min-w-[280px]">
+                            <div className="flex flex-col justify-between w-full lg:w-[30%] min-w-[280px]">
                                 <PowerMeter
                                     label="Current Power Usage"
                                     icon={ArrowTrendingUpIcon}
@@ -46,19 +49,23 @@ function Operation() {
                             </div>
 
                             {/* Graph Section */}
-                            <div className="w-full md:w-[70%]">
+                            <div className="w-full lg:w-[70%]">
                                 <LineGraph />
                             </div>
                         </div>
                         <div className="flex mt-5 space-x-5 w-full h-fit">
                             <BarGraph />
-                            <PieGraph />
+                            <div className="hidden md:hidden lg:block w-full">
+                                <PieGraph />
+                            </div>
                         </div>
+
                         <div className="mt-5 h-full w-full">
                             <StationStatus />
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );

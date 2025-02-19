@@ -9,8 +9,8 @@ export default function BarGraph() {
         const resizeObserver = new ResizeObserver((entries) => {
             if (entries[0]) {
                 setSize({
-                    width: entries[0].contentRect.width, // ปรับความกว้างตามขนาดของคอนเทนเนอร์
-                    height: 300, // หรือปรับความสูงตามต้องการ
+                    width: entries[0].contentRect.width, // Adjust width based on container size
+                    height: 300, // Or adjust the height as needed
                 });
             }
         });
@@ -24,8 +24,8 @@ export default function BarGraph() {
 
     return (
         <div
-            ref={containerRef} // ใส่ ref เพื่อสังเกตขนาดของคอนเทนเนอร์
-            className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-auto "
+            ref={containerRef} // Add ref to observe container size
+            className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full"
         >
             <p className='text-left'>Average Charging Time (Mins)</p>
             <BarChart
@@ -49,9 +49,9 @@ export default function BarGraph() {
                     },
                 }]}
                 series={[{ data: [35, 150, 90, 25, 120, 180, 35, 110, 90, 60], color: "#4880FF" }]}
-                width={size.width} // ใช้ค่า width ที่ปรับได้ตามขนาดคอนเทนเนอร์
-                height={size.height} // ความสูงคงที่หรือปรับได้ตามที่ต้องการ
-                className=" w-full"
+                width={size.width} // Use dynamic width based on container size
+                height={size.height} // Set dynamic height or adjust as needed
+                className="w-full lg:h-[300px]"  // Set height to 300px on lg screens
             />
         </div>
     );

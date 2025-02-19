@@ -14,7 +14,7 @@ function PieGraph() {
                         valueFormatter,
                     },
                 ]}
-                height={280}
+                height={300}
                 className="mt-3"
             />
         </div>
