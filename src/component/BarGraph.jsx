@@ -25,7 +25,7 @@ export default function BarGraph() {
     return (
         <div
             ref={containerRef} // Add ref to observe container size
-            className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full"
+            className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full h-fit"
         >
             <p className='text-left'>Average Charging Time (Mins)</p>
             <BarChart
@@ -51,7 +51,7 @@ export default function BarGraph() {
                 series={[{ data: [35, 150, 90, 25, 120, 180, 35, 110, 90, 60], color: "#4880FF" }]}
                 width={size.width} // Use dynamic width based on container size
                 height={size.height} // Set dynamic height or adjust as needed
-                className="w-full lg:h-[300px]"  // Set height to 300px on lg screens
+                className="w-full "  // Set height to 300px on lg screens
             />
         </div>
     );

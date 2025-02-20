@@ -31,33 +31,43 @@ function Operation() {
                         <Status />
                         <div className="flex flex-wrap lg:flex-nowrap mt-5 justify-between gap-5 h-full">
                             {/* PowerMeter Section */}
-                            <div className="flex flex-col justify-between w-full lg:w-[30%] min-w-[280px]">
-                                <PowerMeter
-                                    label="Current Power Usage"
-                                    icon={ArrowTrendingUpIcon}
-                                    iconColor="text-yellow-500"
-                                    power={750}
-                                    unit="kW"
-                                    description="Real-time updated"
-                                />
-                                <PowerMeter
-                                    label="Total Power Consumption"
-                                    power={3500}
-                                    unit="kWh"
-                                    description="Last updated 3 mins ago"
-                                />
+                            <div className="flex flex-col md:flex-row lg:flex-col justify-between w-full lg:w-[30%] min-w-[280px] gap-5">
+                                {/* PowerMeter Section */}
+                                <div className="flex flex-col w-full md:w-1/2 lg:w-full space-y-5">
+                                    <PowerMeter
+                                        label="Current Power Usage"
+                                        icon={ArrowTrendingUpIcon}
+                                        iconColor="text-yellow-500"
+                                        power={750}
+                                        unit="kW"
+                                        description="Real-time updated"
+                                    />
+                                    <PowerMeter
+                                        label="Total Power Consumption"
+                                        power={3500}
+                                        unit="kWh"
+                                        description="Last updated 3 mins ago"
+                                    />
+                                </div>
+
+                                {/* PieGraph Section */}
+                                <div className="lg:hidden md:w-1/2 ">
+                                    <PieGraph />
+                                </div>
                             </div>
 
+
                             {/* Graph Section */}
-                            <div className="w-full lg:w-[70%]">
+                            <div className="w-full lg:w-[70%] h-full">
                                 <LineGraph />
                             </div>
                         </div>
-                        <div className="flex mt-5 space-x-5 w-full h-fit">
+                        <div className="lg:flex mt-5 space-x-5 w-full">
                             <BarGraph />
                             <div className="hidden md:hidden lg:block w-full">
                                 <PieGraph />
                             </div>
+
                         </div>
 
                         <div className="mt-5 h-full w-full">
