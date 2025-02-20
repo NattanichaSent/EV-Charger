@@ -15,10 +15,10 @@ function Operation() {
             {/* TopBar */}
             <TopBar className="fixed top-0 left-0 w-full bg-white z-10" />
 
-            <div className="flex pt-16">
+            <div className="flex pt-16 pb-8">
                 {/* SideBar (ซ่อนใน sm และ md, แสดงใน lg ขึ้นไป) */}
                 <div className="hidden lg:block">
-                    <SideBar className="fixed top-16 left-0 h-screen z-10" />
+                    <SideBar className="fixed top-16 left-0 bottom-0 z-10" />
                 </div>
 
                 {/* ปรับ padding-left เฉพาะเมื่อจอใหญ่ */}
