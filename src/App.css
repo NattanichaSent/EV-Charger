@@ -23,4 +23,5 @@
   --color-bgSky: rgba(87, 174, 215, 0.4);
   --color-bgRed: rgba(224, 106, 109, 0.4);
   --color-hover: rgba(0, 71, 171, 0.6);
+  --color-bgHover: #f7f7f7;
 }

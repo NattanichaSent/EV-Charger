@@ -15,7 +15,7 @@ function Operation() {
             {/* TopBar */}
             <TopBar className="fixed top-0 left-0 w-full bg-white z-10" />
 
-            <div className="flex pt-16 pb-8">
+            <div className="flex pt-16 pb-10">
                 {/* SideBar (ซ่อนใน sm และ md, แสดงใน lg ขึ้นไป) */}
                 <div className="hidden lg:block">
                     <SideBar className="fixed top-16 left-0 bottom-0 z-10" />
@@ -27,13 +27,12 @@ function Operation() {
                         <p className="font-bold text-2xl text-start">Operation Dashboard</p>
                         <FilterButton />
                     </div>
-                    <div className="mt-5">
+                    <div className="flex flex-col mt-5 gap-5 ">
                         <Status />
-                        <div className="flex flex-wrap lg:flex-nowrap mt-5 justify-between gap-5 h-full">
+                        <div className="lg:grid lg:grid-cols-5 gap-x-5">
                             {/* PowerMeter Section */}
-                            <div className="flex flex-col md:flex-row lg:flex-col justify-between w-full lg:w-[30%] min-w-[280px] gap-5">
-                                {/* PowerMeter Section */}
-                                <div className="flex flex-col w-full md:w-1/2 lg:w-full space-y-5">
+                            <div className="lg:grid-cols-1 lg:col-span-1 h-full md:grid md:grid-cols-3 md:gap-5">
+                                <div className="flex flex-col justify-between h-full md:col-span-1">
                                     <PowerMeter
                                         label="Current Power Usage"
                                         icon={ArrowTrendingUpIcon}
@@ -50,32 +49,33 @@ function Operation() {
                                     />
                                 </div>
 
-                                {/* PieGraph Section */}
-                                <div className="lg:hidden md:w-1/2 ">
+                                <div className="lg:hidden md:col-span-2">
                                     <PieGraph />
                                 </div>
                             </div>
 
 
+
                             {/* Graph Section */}
-                            <div className="w-full lg:w-[70%] h-full">
+                            <div className="w-full h-full lg:col-span-4">
                                 <LineGraph />
                             </div>
                         </div>
-                        <div className="lg:flex mt-5 space-x-5 w-full">
-                            <BarGraph />
-                            <div className="hidden md:hidden lg:block w-full">
-                                <PieGraph />
+                        <div className="lg:grid lg:grid-cols-5 gap-5 w-full">
+                            <div className="col-span-3">
+                                <BarGraph />
                             </div>
 
+                            <div className="hidden md:hidden lg:block w-full col-span-2">
+                                <PieGraph />
+                            </div>
                         </div>
 
-                        <div className="mt-5 h-full w-full">
+                        <div className="h-full w-full">
                             <StationStatus />
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );

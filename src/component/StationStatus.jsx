@@ -4,6 +4,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import ShowOnly from "./ShowOnly";
 import ShowAll from "./ShowAll";
+import Typography from '@mui/material/Typography';
 
 function StationStatus() {
     const [isShowAll, setIsShowAll] = useState(false);
@@ -12,16 +13,31 @@ function StationStatus() {
         setIsShowAll(event.target.checked);
     };
     return (
-        <div className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] h-full">
+        <div className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] h-full hover:bg-bgHover">
             {/* Header */}
-            <div className="flex justify-between">
-                <p>Station 1</p>
+            <div className="flex justify-between text-lg font-semibold items-center ">
+                <p className="">Station 1</p>
                 <div>
-                    <FormControlLabel
-                        label={isShowAll ? "Show All" : "Show Only"} // เปลี่ยนข้อความ label
-                        control={<Switch defaultChecked={false} onChange={handleChange} />} // สวิตช์เริ่มต้นปิด
-                        labelPlacement="start"
-                    />
+                    <div>
+                        <FormControlLabel
+                            label={
+                                <Typography className="text-icon"
+                                    sx={{
+                                        fontFamily: "'Nunito Sans', sans-serif",
+                                        fontSize: '15px',
+                                        fontWeight: 'semibold',
+
+
+                                    }}
+                                >
+                                    {isShowAll ? "Show All" : "Show Only"}
+                                </Typography>
+                            }
+                            control={<Switch defaultChecked={false} onChange={handleChange} />}
+                            labelPlacement="start"
+                        />
+                    </div>
+
 
                     {/* แสดงผลคอมโพเนนต์ตามสถานะ toggle */}
 
@@ -33,7 +49,7 @@ function StationStatus() {
 
 
             {/* ใช้ Tailwind ปรับสีเส้นได้ */}
-            <div className="flex justify-between  mt-5">
+            <div className="flex justify-between mt-5 text-md text-icon">
                 <p>Showing 1 of 5</p>
                 <PagePagination />
             </div>

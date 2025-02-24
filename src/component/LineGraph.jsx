@@ -20,7 +20,7 @@ function LineGraph() {
     }, []);
 
     return (
-        <div ref={containerRef} className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-auto">
+        <div ref={containerRef} className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-auto hover:bg-bgHover">
             <p className='text-left'>Current Power Usage (kW) </p>
             <LineChart
                 xAxis={[

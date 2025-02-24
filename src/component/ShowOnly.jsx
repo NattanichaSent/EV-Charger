@@ -21,7 +21,7 @@ function ShowOnly() {
                 <Divider className="!border-gray-300" />
 
                 {/* แถวที่ 1 */}
-                <div className="flex space-x-2 my-5">
+                <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 my-5">
                     {chunkedData[0] && chunkedData[0].map((ev, index) => (
                         <EVStatus
                             key={index}
@@ -39,7 +39,7 @@ function ShowOnly() {
 
                 {/* แถวที่ 2 */}
                 {chunkedData[1] && (
-                    <div className="flex space-x-2 mb-5">
+                    <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 my-5">
                         {chunkedData[1].map((ev, index) => (
                             <EVStatus
                                 key={index}

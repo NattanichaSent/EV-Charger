@@ -25,7 +25,7 @@ export default function BarGraph() {
     return (
         <div
             ref={containerRef} // Add ref to observe container size
-            className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full h-fit"
+            className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full h-fit hover:bg-bgHover"
         >
             <p className='text-left'>Average Charging Time (Mins)</p>
             <BarChart

@@ -1,5 +1,6 @@
-import { Bars3Icon } from "@heroicons/react/24/outline";
-import { BellIcon } from "@heroicons/react/16/solid";
+import { Bars3Icon, BellIcon as BellOutline } from "@heroicons/react/24/outline";
+import { BellIcon as BellSolid } from "@heroicons/react/24/solid"; // ใช้ชื่ออื่นเพราะซ้ำกัน
+
 import SearchButton from "./SearchButton";
 import ProfileNavbar from "./ProfileNavbar";
 
@@ -18,9 +19,18 @@ const TopBar = ({ className }) => {
             <div className="hidden lg:flex flex-1 justify-between items-center">
                 <SearchButton />
                 <div className="flex items-center">
-                    <button className="w-6 h-6 text-secondary flex items-center cursor-pointer" strokeWidth={1}>
-                        <BellIcon />
-                    </button>
+                    {/* ใช้ group เพื่อควบคุม hover */}
+                    <div className="flex p-4 rounded-2xl hover:bg-bgHover items-center hover:cursor-pointer group ">
+                        <button className="relative w-7 h-7 flex items-center cursor-pointer ">
+                            {/* Default: Outline */}
+                            <BellOutline className="w-7 h-7  group-hover:hidden" />
+                            {/* Hover: Solid (เปลี่ยนสีเมื่อ hover) */}
+                            <BellSolid className="w-7 h-7  group-hover:text-secondary hidden group-hover:block transition-all duration-200 ease-in-out" />
+                        </button>
+                        {/* <p className="font-semibold  group-hover:text-secondary transition-all duration-200 ease-in-out">
+                            Notification
+                        </p> */}
+                    </div>
                     <ProfileNavbar />
                 </div>
             </div>

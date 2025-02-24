@@ -3,7 +3,7 @@ import { desktopOS, valueFormatter } from "../Animation/WebUsageStats";
 
 function PieGraph() {
     return (
-        <div className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full lg:h-[350px] md:h-[260px]"> {/* กำหนดความสูงของ container */}
+        <div className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full lg:h-[350px] md:h-[260px] hover:bg-bgHover"> {/* กำหนดความสูงของ container */}
             <p className='text-left'>Charger Utilization Rate (%)</p>
             <PieChart
                 series={[
@@ -15,7 +15,7 @@ function PieGraph() {
                     },
                 ]}
                 sx={{ height: '100%' }} // ใช้ sx เพื่อปรับความสูง
-                className="p-5 "
+                className="p-5"
             />
         </div>
     );

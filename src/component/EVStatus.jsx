@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { BoltIcon } from "@heroicons/react/24/outline";
 
 const EVStatus = ({
@@ -14,6 +15,7 @@ const EVStatus = ({
     startTime = "2025-01-04 04:00",
     endTime = "2025-01-04 04:20",
 }) => {
+    const [currentSOC, setCurrentSOC] = useState(0); // เริ่มต้นที่ 0%
     const isUnavailable = status === "Unavailable";
     const isReserved = status === "Reserved";
     const isAvailable = status === "Available";
@@ -27,8 +29,23 @@ const EVStatus = ({
                 ? "bg-bgGreen" // สีเขียวถ้าพร้อมใช้งาน
                 : bgStatus; // สีพื้นฐานที่ส่งมา
 
+    // เพิ่ม effect ให้กราฟ SOC เปลี่ยนจาก 0 ไปยังค่าใหม่
+    useEffect(() => {
+        if (soc > currentSOC) {
+            const interval = setInterval(() => {
+                setCurrentSOC(prevSOC => {
+                    if (prevSOC >= soc) {
+                        clearInterval(interval);
+                        return soc; // หยุดเมื่อถึงค่า SOC ที่ต้องการ
+                    }
+                    return prevSOC + 1; // เพิ่มขึ้นทีละ 1%
+                });
+            }, 3000); // เพิ่ม 1% ทุกๆ 10ms เพื่อให้กราฟค่อยๆ เคลื่อนไหว
+        }
+    }, [soc, currentSOC]);
+
     return (
-        <div className="w-full h-full">
+        <div className="w-full h-fit">
             {/* หัวข้อ EV No. และ Cap Max */}
             <label
                 className={`flex justify-between text-[10px] font-semibold ${isUnavailable
@@ -73,16 +90,16 @@ const EVStatus = ({
                 ) : (
                     <>
                         <div
-                            className={`${bgCharging} h-full rounded-xl p-6 flex items-center`}
-                            style={{ width: `${soc}%` }}
+                            className={`${bgCharging} h-full rounded-xl p-6 flex items-center transition-all duration-500 ease-in-out`}
+                            style={{ width: `${currentSOC}%` }} // ใช้ currentSOC สำหรับการแสดงผล
                         ></div>
                         <div
                             className={`absolute inset-0 flex justify-between items-center px-6 py-2 text-xs ${textColor}`}
                         >
                             <div className="flex items-center">
-                                <BoltIcon className="h-6 w-6" />
+                                <BoltIcon className="h-6 w-6 transition-transform duration-500 ease-in-out" />
                                 <div className="flex flex-col text-[11px]">
-                                    <span className="font-bold text-[14px]">{soc}%</span>
+                                    <span className="font-bold text-[14px]">{currentSOC}%</span> {/* เปลี่ยนจาก soc เป็น currentSOC */}
                                     <span>111.8 kW</span>
                                 </div>
                             </div>
