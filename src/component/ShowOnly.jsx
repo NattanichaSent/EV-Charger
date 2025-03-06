@@ -36,7 +36,7 @@ function ShowOnly() {
                         />
                     ))}
                 </div>
-
+                {/* <p className="flex justify-start my-5 font-semibold">EV Charger Rail 2</p> */}
                 {/* แถวที่ 2 */}
                 {chunkedData[1] && (
                     <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 space-y-5">
