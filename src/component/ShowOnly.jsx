@@ -19,9 +19,9 @@ function ShowOnly() {
         <div>
             <div className="flex flex-col ">
                 <Divider className="!border-gray-300" />
-
+                <p className="flex justify-start my-5 font-semibold">EV Charger Rail 1</p>
                 {/* แถวที่ 1 */}
-                <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 my-5">
+                <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 space-y-5">
                     {chunkedData[0] && chunkedData[0].map((ev, index) => (
                         <EVStatus
                             key={index}
@@ -39,7 +39,7 @@ function ShowOnly() {
 
                 {/* แถวที่ 2 */}
                 {chunkedData[1] && (
-                    <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 my-5">
+                    <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 space-y-5">
                         {chunkedData[1].map((ev, index) => (
                             <EVStatus
                                 key={index}

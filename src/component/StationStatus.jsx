@@ -16,7 +16,7 @@ function StationStatus() {
         <div className="p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] h-full hover:bg-bgHover">
             {/* Header */}
             <div className="flex justify-between text-lg font-semibold items-center ">
-                <p className="">Station 1</p>
+                <p className="text-xl">Station 1</p>
                 <div>
                     <div>
                         <FormControlLabel
@@ -43,7 +43,9 @@ function StationStatus() {
 
                 </div>
             </div>
+
             <div className="">
+
                 {isShowAll ? <ShowAll /> : <ShowOnly />}
             </div>
 

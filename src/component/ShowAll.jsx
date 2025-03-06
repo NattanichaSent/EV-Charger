@@ -22,6 +22,7 @@ function ShowAll() {
         <div>
             <div className="flex flex-col ">
                 <Divider className="!border-stroke" />
+                <p className="flex justify-start mt-5 font-semibold">EV Charger Rail 1</p>
 
                 {/* แสดงผลข้อมูลในแต่ละแถว */}
                 <div className="mt-5">
