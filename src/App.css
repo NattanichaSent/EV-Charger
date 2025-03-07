@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+#root {
+  margin: 0 auto;
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center;
+}
+
+@theme {
+  --color-primary: #202224;
+  --color-secondary: #0047ab;
+  --color-stroke: #e0e0e0;
+  --color-background: #ffff;
+  --color-onclickText: #ffff;
+  --color-icon: #979797;
+  --color-checkIcon: #75bd27;
+  --color-boltIcon: #ffcc00;
+  --color-reservedIcon: #57aed7;
+  --color-xIcon: #e06a6d;
+  --color-bgBlue: rgba(0, 71, 171, 0.4);
+  --color-bgGreen: rgba(168, 224, 106, 0.4);
+  --color-bgYellow: rgba(255, 204, 0, 0.4);
+  --color-bgSky: rgba(87, 174, 215, 0.4);
+  --color-bgRed: rgba(224, 106, 109, 0.4);
+  --color-hover: rgba(0, 71, 171, 0.6);
+  --color-bgHover: #f7f7f7;
+}
