@@ -47,9 +47,9 @@ function Operation() {
                             <div className="mb-5">
                                 <Status />
                             </div>)}
-                        <div className="lg:grid lg:grid-cols-5 gap-x-5">
-                            <div className="lg:grid-cols-1 lg:col-span-1 h-full md:grid md:grid-cols-3 md:gap-5">
-                                <div className="flex flex-col justify-between  h-full md:col-span-1 ">
+                        <div className=" lg:grid lg:grid-cols-6 lg:space-x-5 mb-5  ">
+                            <div className=" lg:col-span-2 lg:flex lg:flex-col lg:justify-between md:grid md:grid-cols-3 md:space-x-5">
+                                <div className=" md:flex md:flex-col md:justify-between md:space-y-5 md:col-span-1 lg:w-full">
                                     {showGraphs.line && (
                                         <PowerMeter
                                             label="Current Power Usage"
@@ -60,24 +60,24 @@ function Operation() {
                                             description="Real-time updated"
                                         />)}
                                     {showGraphs.totalPower && (
-                                        <div className="mb-5">
-                                            <PowerMeter
-                                                label="Total Power Consumption"
-                                                power={3500}
-                                                unit="kWh"
-                                                description="Last updated 3 mins ago"
-                                            />
-                                        </div>
+                                        <PowerMeter
+                                            label="Total Power Consumption"
+                                            power={3500}
+                                            unit="kWh"
+                                            description="Last updated 3 mins ago"
+                                        />
                                     )}
                                 </div>
                                 {showGraphs.pie && (
-                                    <div className="lg:hidden md:col-span-2 ">
+                                    <div className="lg:hidden md:col-span-2  ">
                                         <PieGraph />
                                     </div>
                                 )}
                             </div>
+
+
                             {showGraphs.line && (
-                                <div className="w-full h-full lg:col-span-4 mb-5">
+                                <div className="w-full h-full col-span-4 md:mt-5 lg:mt-0">
                                     <LineGraph />
                                 </div>
                             )}
