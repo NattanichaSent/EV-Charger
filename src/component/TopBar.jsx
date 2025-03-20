@@ -6,9 +6,9 @@ import ProfileNavbar from "./ProfileNavbar";
 
 const TopBar = ({ className }) => {
     return (
-        <div className={`flex items-center lg:px-10 md:px-10 ${className}`}>
+        <div className={`flex items-center lg:px-10 md:px-10 px-3 ${className}`}>
             <button className="lg:hidden">
-                <Bars3Icon className="h-6 w-6 text-icon mr-3" />
+                <Bars3Icon className="h-6 w-6 text-icon mr-3 " />
             </button>
 
             <div className="py-5 flex justify-center items-center lg:mr-37">

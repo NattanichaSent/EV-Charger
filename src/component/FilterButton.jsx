@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BarsArrowDownIcon } from "@heroicons/react/24/outline";
+import { BarsArrowDownIcon, ListBulletIcon } from "@heroicons/react/24/outline";
 
 function FilterButton({ showGraphs, onFilterChange }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,16 +17,17 @@ function FilterButton({ showGraphs, onFilterChange }) {
             {/* ปุ่ม Filter */}
             <div
                 onClick={togglePopup}
-                className="flex text-secondary bg-bgSky font-semibold hover:bg-hover cursor-pointer py-1 px-2 rounded-lg w-fit"
+                className="flex text-secondary bg-bgSky font-semibold hover:bg-hover cursor-pointer py-1 px-3 rounded-lg w-fit items-center"
             >
-                <p className="mr-2">Filter</p>
-                <BarsArrowDownIcon className="w-6 h-6" />
+                <BarsArrowDownIcon className="w-5 h- mr-1" />
+                <p className="">Feature</p>
+                {/* <BarsArrowDownIcon className="w-6 h-6"/> */}
             </div>
 
             {/* Popup */}
             {isOpen && (
                 <div className="absolute right-0 mt-2 w-64 bg-white border border-gray-300 shadow-lg rounded-lg p-4 z-50">
-                    <p className="text-sm font-semibold">Filter Options</p>
+                    <p className="text-sm font-semibold text-start">Filter Options</p>
                     <div className="mt-2 space-y-2">
                         <label className="flex items-center space-x-2">
                             <input
@@ -85,7 +86,7 @@ function FilterButton({ showGraphs, onFilterChange }) {
                     </div>
                     <button
                         onClick={togglePopup}
-                        className="mt-3 w-full bg-blue-500 text-white py-1 px-2 rounded-lg hover:bg-blue-700"
+                        className="mt-3 w-full bg-blue-500 text-white py-1 px-2 rounded-lg hover:bg-blue-700 cursor-pointer"
                     >
                         Apply
                     </button>

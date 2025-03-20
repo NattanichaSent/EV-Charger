@@ -51,7 +51,7 @@ function StationStatus() {
 
 
             {/* ใช้ Tailwind ปรับสีเส้นได้ */}
-            <div className="flex justify-between mt-5 text-md text-icon">
+            <div className="flex justify-between lg:text-[15px] md:text-md text-sm text-icon items-end">
                 <p>Showing 1 of 5</p>
                 <PagePagination />
             </div>

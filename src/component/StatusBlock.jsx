@@ -26,7 +26,7 @@ function StatusBlock({
     iconBgColor = "bg-gray-200",
 }) {
     return (
-        <div className=" flex flex-col p-3 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full hover:bg-bgHover">
+        <div className=" flex flex-col p-4 rounded-2xl shadow-[0px_4px_10px_rgba(0,0,0,0.10)] w-full hover:bg-bgHover">
             <div className="flex">
                 <div className="flex flex-col text-left justify-between  w-full text-primary">
                     <p className="w-auto  text-sm font-semibold">{title}</p>

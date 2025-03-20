@@ -2,7 +2,6 @@ import Divider from "@mui/material/Divider";
 import EVStatus from "./EVStatus";
 import EVData from "../data/EVData";
 
-
 const chunkArray = (array, size) => {
     const result = [];
     for (let i = 0; i < array.length; i += size) {
@@ -20,36 +19,31 @@ function ShowAll() {
 
     return (
         <div>
-            <div className="flex flex-col ">
+            <div className="flex flex-col">
                 <Divider className="!border-stroke" />
                 <p className="flex justify-start mt-5 font-semibold">EV Charger Rail 1</p>
 
-                {/* แสดงผลข้อมูลในแต่ละแถว */}
-                <div className="mt-5">
-                    {limitedData.map((chunk, rowIndex) => (
-                        <div key={rowIndex} className="flex space-x-2 space-y-5">
-                            {chunk.map((ev, index) => (
-                                <EVStatus
-                                    key={index}
-                                    soc={ev.soc}
-                                    remainingTime={ev.remainingTime}
-                                    status={ev.status}
-                                    evNo={ev.evNo}
-                                    capMax={ev.capMax}
-                                    socNo={ev.socNo}
-                                    startTime={ev.startTime}
-                                    endTime={ev.endTime}
-                                />
-                            ))}
-                        </div>
+                {/* ใช้ Grid Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-4 justify-between gap-2 md:grid-cols-2 my-5 ">
+                    {limitedData.flat().map((ev, index) => (
+                        <EVStatus
+                            key={index}
+                            soc={ev.soc}
+                            remainingTime={ev.remainingTime}
+                            status={ev.status}
+                            evNo={ev.evNo}
+                            capMax={ev.capMax}
+                            socNo={ev.socNo}
+                            startTime={ev.startTime}
+                            endTime={ev.endTime}
+                        />
                     ))}
                 </div>
 
-                {/* Divider */}
                 <Divider className="!border-gray-300 " />
             </div>
         </div>
     );
 }
 
-export default ShowAll
+export default ShowAll;

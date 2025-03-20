@@ -18,7 +18,7 @@ const iconMap = {
 
 function Status() {
     return (
-        <div className="grid grid-cols-5 md:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-5 w-full h-fit">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-5 w-full h-fit">
             {StatusData.map((item, index) => (
                 <StatusBlock
                     key={index}
