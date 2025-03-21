@@ -20,8 +20,7 @@ function ShowAll() {
     return (
         <div>
             <div className="flex flex-col">
-                <Divider className="!border-stroke" />
-                <p className="flex justify-start mt-5 font-semibold">EV Charger Rail 1</p>
+
 
                 {/* ใช้ Grid Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-4 justify-between gap-2 md:grid-cols-2 my-5 ">

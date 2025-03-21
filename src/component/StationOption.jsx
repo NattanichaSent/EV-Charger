@@ -35,7 +35,7 @@ function StationOption({ selectedStations, onSelectStation }) {
                 onClick={togglePopup}
                 className="flex text-secondary bg-bgSky font-semibold hover:bg-hover cursor-pointer py-1 px-3 rounded-lg w-fit items-center"
             >
-                <MapPinIcon className="w-5 h-5 mr-1 font-bold" strokeWidth={2} />
+                <MapPinIcon className="w-5 h-5 mr-1 font-bold" strokeWidth={1.8} />
                 <p className="">Station</p>
             </div>
             {isOpen && (

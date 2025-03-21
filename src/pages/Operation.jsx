@@ -45,11 +45,11 @@ function Operation() {
                         <p className="font-bold text-2xl text-start">Operation Dashboard</p>
                     </div>
                     <div className="flex justify-between w-full h-fit mb-5 items-center">
-                        <div className="flex gap-3 items-start">
-                            <BuildingOffice2Icon className="w-6 h-6 text-secondary" />
-                            <p className="font-semibold text-xl text-start">
+                        <div className="flex gap-3 items-start text-secondary">
+                            <BuildingOffice2Icon className="w-6 h-6" />
+                            <p className="font-semibold text-lg text-start">
 
-                                <span className="text-secondary">
+                                <span className="">
                                     {/* แสดงสถานีที่เลือก */}
                                     {selectedStations.length > 0
                                         ? selectedStations.join(", ")
