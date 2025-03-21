@@ -35,7 +35,7 @@ function Operation() {
 
     return (
         <div>
-            <TopBar className="fixed top-0 left-0 w-full bg-red-400 z-10" />
+            <TopBar className="fixed top-0 left-0 w-full bg-white z-10" />
             <div className="flex pt-16 pb-10">
                 <div className="hidden lg:block">
                     <SideBar className="fixed top-16 left-0 bottom-0 z-10" />
